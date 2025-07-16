@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    font-family: 'Playfair Display', serif;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    display: flex; /* Делаем контейнер флекс-контейнером */
+    flex-direction: column; /* Элементы располагаются в колонку */
+    align-items: center; /* Выравниваем элементы по центру горизонтали */
+    gap: 30px; /* Добавляем отступ между элементами (заголовок и кнопка) */
+}
+
+.gradient-text {
+    font-size: 5em;
+    font-weight: 700;
+    background: linear-gradient(to right, #ffffff, #d0d0d0);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 0;
+}
+
+.congratulate-button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-family: Arial, sans-serif; /* Можно использовать другой шрифт для кнопки */
+    font-weight: bold;
+    color: #fff;
+    background-color: #25D366; /* Цвет WhatsApp */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none; /* Убираем подчеркивание, если бы это была ссылка */
+    display: inline-block; /* Для корректного применения padding и margin */
+}
+
+.congratulate-button:hover {
+    background-color: #1DA851; /* Темнее при наведении */
+    transform: translateY(-2px); /* Небольшой эффект поднятия */
+}
+
+.congratulate-button:active {
+    transform: translateY(0); /* Эффект нажатия */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Медиа-запрос для адаптации размера шрифта на маленьких экранах */
+@media (max-width: 768px) {
+    .gradient-text {
+        font-size: 3em;
+    }
+    .congratulate-button {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gradient-text {
+        font-size: 2em;
+    }
+    .congratulate-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}

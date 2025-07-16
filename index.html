@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эльнар и Гюльнисе</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="gradient-text">Эльнар и Гюльнисе</h1>
+        <button id="congratulateButton" class="congratulate-button">Поздравить</button>
+    </div>
+
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эльнар и Гюльнисе</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="gradient-text">Эльнар и Гюльнисе</h1>
+        <button id="congratulateButton" class="congratulate-button">Поздравить</button>
+    </div>
+
+    <script>
+        document.getElementById('congratulateButton').addEventListener('click', function() {
+            // Номера телефонов, на которые нужно отправить поздравление
+            // ВАЖНО: Замените '79xxxxxxxx1' и '79xxxxxxxx2' на реальные номера
+            // в международном формате без плюса, например, '79123456789'.
+            const phoneNumbers = ['79224385303', '79637984954']; 
+            
+            // Текст поздравления
+            const message = encodeURIComponent('Счастья и удачи вам в личной жизни!');
+            
+            // Отправляем сообщение на каждый номер
+            phoneNumbers.forEach(number => {
+                const whatsappUrl = `https://wa.me/${number}?text=${message}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
