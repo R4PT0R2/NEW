@@ -31,22 +31,32 @@ body {
     padding: 0;
 }
 
+/* Добавьте этот блок стилей в ваш style.css */
+.buttons-container {
+    display: flex; /* Делаем контейнер флексбоксом */
+    gap: 20px;     /* Добавляем расстояние между кнопками */
+    margin-top: 30px; /* Отступ сверху от имен */
+    flex-wrap: wrap; /* Разрешаем кнопкам переноситься на новую строку, если не хватает места */
+    justify-content: center; /* Центрируем кнопки внутри контейнера */
+}
+
+/* Остальные стили для .congratulate-button остаются прежними */
 .congratulate-button {
     padding: 15px 30px;
     font-size: 1.5em;
-    font-family: Arial, sans-serif; /* Можно использовать другой шрифт для кнопки */
+    font-family: Arial, sans-serif;
     font-weight: bold;
     color: #fff;
-    background-color: #25D366; /* Цвет WhatsApp */
+    background-color: #25D366;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.2s ease;
-    text-decoration: none; /* Убираем подчеркивание, если бы это была ссылка */
-    display: inline-block; /* Для корректного применения padding и margin */
+    text-decoration: none;
+    display: inline-block;
+    /* margin-top: 30px; ЭТУ СТРОКУ УДАЛИТЕ ИЗ .congratulate-button, так как теперь отступ задан для buttons-container */
 }
-
 .congratulate-button:hover {
     background-color: #1DA851; /* Темнее при наведении */
     transform: translateY(-2px); /* Небольшой эффект поднятия */
