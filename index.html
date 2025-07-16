@@ -9,47 +9,44 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="gradient-text">Эльнар</h1>
-        <button id="congratulateButton" class="congratulate-button">Поздравить</button>
+        <h2 class="date-header">Свадьба (18.08.2025-19.08.2025)</h2>
+        <h1 class="gradient-text">Свадьба! Эльнар и Гюльнисе</h1>
+
+        <div class="buttons-container">
+            <button id="congratulateElnar" class="congratulate-button">Поздравить Эльнара</button>
+            <button id="congratulateGulnise" class="congratulate-button">Поздравить Гюльнисе</button>
+        </div>
     </div>
 
     <script>
-    document.getElementById('congratulateButton').addEventListener('click', function() {
-        // Замените '79xxxxxxxxxx' на реальный номер телефона в международном формате без плюса
-        const phoneNumber = '79224385303';
-        // Обновленный текст поздравления
-        const message = encodeURIComponent('Счастья и удачи вам в личной жизни!');
-        
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-        window.open(whatsappUrl, '_blank');
-    });
-</script>
+        // Общий текст поздравления
+        const baseMessage = 'Счастья и удачи вам в личной жизни!';
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Эльнар и Гюльнисе</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <h1 class="gradient-text">Гюльнисе</h1>
-        <button id="congratulateButton" class="congratulate-button">Поздравить</button>
-    </div>
+        // Данные для Эльнара
+        const elnarPhoneNumber = '79224385303'; // ВАЖНО: Замените на реальный номер Эльнара
+        const elnarName = 'Эльнара'; // Имя в винительном падеже для поздравления
 
-    <script>
-    document.getElementById('congratulateButton').addEventListener('click', function() {
-        // Замените '79xxxxxxxxxx' на реальный номер телефона в международном формате без плюса
-        const phoneNumber = '79637984954';
-        // Обновленный текст поздравления
-        const message = encodeURIComponent('Счастья и удачи вам в личной жизни!');
-        
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-        window.open(whatsappUrl, '_blank');
-    });
-</script>
+        // Данные для Гюльнисе
+        const gulnisePhoneNumber = '79637984954'; // ВАЖНО: Замените на реальный номер Гюльнисе
+        const gulniseName = 'Гюльнисе'; // Имя в винительном падеже для поздравления
+
+        // Функция для отправки поздравления
+        function sendWhatsAppMessage(phoneNumber, name) {
+            const personalizedMessage = `Поздравляю ${name}, ${baseMessage}`;
+            const encodedMessage = encodeURIComponent(personalizedMessage);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Привязываем функцию к кнопке Эльнара
+        document.getElementById('congratulateElnar').addEventListener('click', function() {
+            sendWhatsAppMessage(elnarPhoneNumber, elnarName);
+        });
+
+        // Привязываем функцию к кнопке Гюльнисе
+        document.getElementById('congratulateGulnise').addEventListener('click', function() {
+            sendWhatsAppMessage(gulnisePhoneNumber, gulniseName);
+        });
+    </script>
 </body>
 </html>
