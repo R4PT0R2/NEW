@@ -13,7 +13,7 @@
         <button id="congratulateButton" class="congratulate-button">Поздравить</button>
     </div>
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -24,28 +24,31 @@
 </head>
 <body>
     <div class="container">
+        <h2 class="date-header">Свадьба (18.08.2025-19.08.2025)</h2>
         <h1 class="gradient-text">Эльнар и Гюльнисе</h1>
         <button id="congratulateButton" class="congratulate-button">Поздравить</button>
     </div>
 
     <script>
         document.getElementById('congratulateButton').addEventListener('click', function() {
-            // Номера телефонов, на которые нужно отправить поздравление
-            // ВАЖНО: Замените '79xxxxxxxx1' и '79xxxxxxxx2' на реальные номера
-            // в международном формате без плюса, например, '79123456789'.
-            const phoneNumbers = ['79224385303', '79637984954']; 
+            // Создаем массив объектов, где каждый объект содержит номер и имя
+            const recipients = [
+                { phoneNumber: '79224385303', name: 'Эльнар' }, // Замените на реальный номер Эльнара
+                { phoneNumber: '79637984954', name: 'Гюльнисе' }  // Замените на реальный номер Гюльнисе
+            ];
             
-            // Текст поздравления
-            const message = encodeURIComponent('Счастья и удачи вам в личной жизни!');
+            // Основной текст поздравления (без имени)
+            const baseMessage = 'Счастья и удачи вам в личной жизни!';
             
-            // Отправляем сообщение на каждый номер
-            phoneNumbers.forEach(number => {
-                const whatsappUrl = `https://wa.me/${number}?text=${message}`;
+            // Отправляем сообщение на каждый номер с персонализацией
+            recipients.forEach(recipient => {
+                const personalizedMessage = `Поздравляю ${recipient.name}, ${baseMessage}`;
+                const encodedMessage = encodeURIComponent(personalizedMessage);
+                
+                const whatsappUrl = `https://wa.me/${recipient.phoneNumber}?text=${encodedMessage}`;
                 window.open(whatsappUrl, '_blank');
             });
         });
     </script>
-</body>
-</html>
 </body>
 </html>
