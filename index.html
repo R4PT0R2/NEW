@@ -10,9 +10,20 @@
 <body>
     <div class="container">
         <h1 class="gradient-text">Эльнар</h1>
-         <h2 class="gradient-text">Гюльнисе </h2>
         <button id="congratulateButton" class="congratulate-button">Поздравить</button>
     </div>
+
+    <script>
+    document.getElementById('congratulateButton').addEventListener('click', function() {
+        // Замените '79xxxxxxxxxx' на реальный номер телефона в международном формате без плюса
+        const phoneNumber = '79224385303';
+        // Обновленный текст поздравления
+        const message = encodeURIComponent('Счастья и удачи вам в личной жизни!');
+        
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+    });
+</script>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -25,30 +36,20 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="gradient-text">Эльнар и Гюльнисе</h1>
+        <h1 class="gradient-text">Гюльнисе</h1>
         <button id="congratulateButton" class="congratulate-button">Поздравить</button>
     </div>
 
     <script>
-        document.getElementById('congratulateButton').addEventListener('click', function() {
-            // Создаем массив объектов, где каждый объект содержит номер и имя
-            const recipients = [
-                { phoneNumber: '79224385303', name: 'Эльнар' }, // Замените на реальный номер Эльнара
-                { phoneNumber: '79637984954', name: 'Гюльнисе' }  // Замените на реальный номер Гюльнисе
-            ];
-            
-            // Основной текст поздравления (без имени)
-            const baseMessage = 'Счастья и удачи вам в личной жизни!';
-            
-            // Отправляем сообщение на каждый номер с персонализацией
-            recipients.forEach(recipient => {
-                const personalizedMessage = `Поздравляю ${recipient.name}, ${baseMessage}`;
-                const encodedMessage = encodeURIComponent(personalizedMessage);
-                
-                const whatsappUrl = `https://wa.me/${recipient.phoneNumber}?text=${encodedMessage}`;
-                window.open(whatsappUrl, '_blank');
-            });
-        });
-    </script>
+    document.getElementById('congratulateButton').addEventListener('click', function() {
+        // Замените '79xxxxxxxxxx' на реальный номер телефона в международном формате без плюса
+        const phoneNumber = '79637984954';
+        // Обновленный текст поздравления
+        const message = encodeURIComponent('Счастья и удачи вам в личной жизни!');
+        
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+    });
+</script>
 </body>
 </html>
